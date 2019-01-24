@@ -18,7 +18,7 @@ class WaifudbsController < ApplicationController
                                            use_filename: true,
                                            folder: 'Waifus/',
                                            public_id: names[index].gsub(' ','-').to_s)
-      @waifudb = Waifudb.new(name: names[index], imgwaifu: upload['url'])
+      @waifudb = Waifudb.new(name: names[index], imgwaifu: upload['url'].sub('http','https'))
       @waifudb.save
     end
     render json: @waifudb, status: :ok
