@@ -4,7 +4,7 @@ require 'open-uri'
 class WaifudbsController < ApplicationController
 
   def random_waifu
-    page = rand(1..10)
+    page = rand(1..11)
     url = page == 1 ? 'http://jurnalotaku.com/?s=%5Bwaifu+wednesday%5D' : "http://jurnalotaku.com/page/#{page}/?s=%5Bwaifu+wednesday%5D"
     waifus = Nokogiri::HTML(open(url))
     names = waifus.css('.article-inner-wrapper').css('.cover').css('img').map { |name| name['alt'].sub('[Waifu Wednesday] ','') if name['alt'].include?('[Waifu Wednesday]')}
