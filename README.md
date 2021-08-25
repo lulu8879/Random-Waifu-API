@@ -1,4 +1,4 @@
-# **Random Waifu API**
+# **Random Waifu API (Discontinued / Outdated)**
 
 Try to make an api using Ruby on Rails with Cloudinary
 
